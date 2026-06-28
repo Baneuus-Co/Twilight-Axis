@@ -71,7 +71,7 @@
 /obj/item/rogueweapon/werewolf_claw/gnoll
 	name = "Gnoll Claw"
 	// We are smarter, we can use our solid, steel-like claws to defend ourselves.
-	wdefense = 7 // TA EDIT
+	wdefense = 9 // TA EDIT
 	force = 30
 	possible_item_intents = list(/datum/intent/simple/gnoll_cut, /datum/intent/simple/werewolf/gnoll, /datum/intent/mace/smash/werewolf/gnoll, /datum/intent/mace/strike/gnoll)
 
