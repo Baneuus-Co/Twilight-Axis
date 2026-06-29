@@ -8,9 +8,11 @@
 	traits_applied = list(TRAIT_HEAVYARMOR)
 	reset_stats = TRUE
 	subclass_stats = list(
+		STATKEY_STR = 2,
 		STATKEY_CON = 4,
 		STATKEY_WIL = 2,
-		STATKEY_SPD = 2
+		STATKEY_SPD = 2,
+		STATKEY_PER = 1
 	)
 	subclass_skills = list(
 		/datum/skill/magic/holy = SKILL_LEVEL_EXPERT,

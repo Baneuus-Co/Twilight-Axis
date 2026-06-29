@@ -5,6 +5,7 @@
 	traits_applied = list(TRAIT_RITUALIST, TRAIT_DODGEEXPERT, TRAIT_ALCHEMY_EXPERT) // Surely this won't be broken.
 	reset_stats = TRUE
 	subclass_stats = list(
+		STATKEY_STR = 1,
 		STATKEY_PER = 2,
 		STATKEY_WIL = 2,
 		STATKEY_SPD = 3,
