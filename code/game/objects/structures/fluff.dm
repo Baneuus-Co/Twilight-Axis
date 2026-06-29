@@ -729,10 +729,11 @@
 
 /obj/structure/fluff/signage/examine(mob/user)
 	. = ..()
+	var/realm_name = SSmapping.map_adjustment.realm_name //TA EDIT таблички теперь корректно работают на всех картах
 	if(!user.is_literate())
 		. += "I have no idea what it says."
 	else
-		. += "It says \"Twilight Axis\""
+		. += "It says \"[realm_name]\""
 
 /obj/structure/fluff/sign
 	icon_state = "signwrote"
@@ -1208,7 +1209,7 @@
 	if(user.mind.assigned_role == "Bishop")
 		. += span_info("As the Bishop, you can marry two people by having them both bite an apple, then offering it to the cross.")
 		. += span_info("The second person to bite the apple will take the last name of whoever bit it first.")
-	else if(istype(living_user) && HAS_TRAIT(living_user, TRAIT_MARRIAGE_CAPABLE) && (living_user.patron.type == /datum/patron/divine/eora))
+	else if(istype(living_user) && HAS_TRAIT(living_user, TRAIT_MARRIAGE_CAPABLE))
 		. += span_info("As an Eoran, you can marry two people by having them both bite an apple, then offering it to the cross.")
 		. += span_info("The second person to bite the apple will take the last name of whoever bit it first.")
 
@@ -1372,7 +1373,7 @@
 	if(user.mind)
 		var/mob/living/living_user = user
 		// if there's no bishop inround, you can still get married... as long as there's an eoran. heretics can do it too!
-		if((user.mind.assigned_role == "Bishop") || (istype(living_user) && HAS_TRAIT(living_user, TRAIT_MARRIAGE_CAPABLE) && (living_user.patron.type == /datum/patron/divine/eora)))
+		if(HAS_TRAIT(living_user, TRAIT_MARRIAGE_CAPABLE))
 			if(istype(W, /obj/item/reagent_containers/food/snacks/grown/apple))
 				var/obj/item/reagent_containers/food/snacks/grown/apple/A = W
 				//The MARRIAGE TEST BEGINS
@@ -1571,3 +1572,21 @@
 	stake.forceMove(drop_location())
 	stake = null
 	qdel(src)
+
+/obj/structure/bars/passage/shutter/bookcase
+	name = "Empty Bookcase"
+	desc = "Refuge for few, an irrelevance to most."
+	icon_state = "decoybookcase0"
+
+/obj/structure/bars/passage/shutter/bookcase/redstone_triggered()
+	if(obj_broken)
+		return
+
+	if(density)
+		icon_state = "decoybookcase1"
+		density = FALSE
+		opacity = FALSE
+	else
+		icon_state = "decoybookcase0"
+		density = TRUE
+		opacity = TRUE
