@@ -10,10 +10,12 @@
 	cmode_music = 'sound/music/cmode/antag/combat_thewall.ogg'
 	reset_stats = TRUE
 	subclass_stats = list(
+		// TA EDIT
 		STATKEY_STR = 3,
 		STATKEY_WIL = 4,
 		STATKEY_CON = 4,
 		STATKEY_SPD = 1,
+		// TA EDIT
 		STATKEY_INT = 1
 	)
 	subclass_skills = list(
