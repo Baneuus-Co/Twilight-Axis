@@ -7,6 +7,7 @@
 	cmode_music = 'sound/music/combat_graggar.ogg'
 	category_tags = list(CTAG_GNOLL)
 	traits_applied = list()
+	maximum_possible_slots = 5
 	reset_stats = TRUE
 	subclass_stats = list(
 		STATKEY_STR = 3,
