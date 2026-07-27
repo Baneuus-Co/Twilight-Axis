@@ -5,7 +5,7 @@
 	
 	outfit = /datum/outfit/job/roguetown/gnoll/templar
 	category_tags = list(CTAG_GNOLL)
-	traits_applied = list(TRAIT_HEAVYARMOR)
+	traits_applied = list(TRAIT_HEAVYARMOR, TRAIT_UNCONVERTIBLE)
 	maximum_possible_slots = 5
 	reset_stats = TRUE
 	subclass_stats = list(
@@ -40,7 +40,6 @@
 		don_pelt(H)
 		var/datum/devotion/C = new /datum/devotion(H, H.patron)
 		C.grant_miracles(H, cleric_tier = CLERIC_T2, passive_gain = CLERIC_REGEN_MINOR, start_maxed = FALSE)
-		H.mind?.AddSpell(new /datum/action/cooldown/spell/convert_heretic/free)
 
 /obj/item/clothing/suit/roguetown/armor/regenerating/skin/gnoll_armor/templar
 	icon_state = "templar"
